@@ -74,8 +74,8 @@ const MenuPage = () => {
         <Tabs defaultValue="all" className="max-w-5xl mx-auto">
           <TabsList className="grid w-full grid-cols-3 mb-8">
             <TabsTrigger value="all">All Items</TabsTrigger>
-            <TabsTrigger value="breakfast">Breakfast</TabsTrigger>
-            <TabsTrigger value="lunch-dinner">Lunch & Dinner</TabsTrigger>
+            <TabsTrigger value="lunch">Lunch</TabsTrigger>
+            <TabsTrigger value="dinner"> Dinner</TabsTrigger>
           </TabsList>
           
           <TabsContent value="all">
@@ -103,10 +103,10 @@ const MenuPage = () => {
             </div>
           </TabsContent>
           
-          <TabsContent value="breakfast">
+          <TabsContent value="lunch">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {foodItems
-                .filter((item) => item.category === "Breakfast")
+                .filter((item) => item.category === "Lunch")
                 .map((item) => (
                   <div key={item.id} className="animate-fade-in">
                     <FoodCard 
@@ -130,10 +130,10 @@ const MenuPage = () => {
             </div>
           </TabsContent>
           
-          <TabsContent value="lunch-dinner">
+          <TabsContent value="dinner">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {foodItems
-                .filter((item) => item.category === "Lunch" || item.category === "Dinner")
+                .filter((item) => item.category === "Dinner")
                 .map((item) => (
                   <div key={item.id} className="animate-fade-in">
                     <FoodCard 
